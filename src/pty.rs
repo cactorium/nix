@@ -37,8 +37,8 @@ pub fn openpty(winsize: Option<Winsize>, termios: Option<Termios>) -> Result<Ope
             &mut master as *mut libc::c_int,
             &mut slave as *mut libc::c_int,
             0 as *mut libc::c_char,
-            c_termios as *const libc::termios,
-            c_winsize)
+            c_termios as *mut libc::termios,
+            c_winsize as *mut Winsize)
     };
 
     let _ = try!(Errno::result(ret));
