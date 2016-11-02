@@ -43,6 +43,8 @@ pub mod mount;
 #[cfg(target_os = "linux")]
 pub mod mqueue;
 
+pub mod pty;
+
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 pub mod poll;
 
