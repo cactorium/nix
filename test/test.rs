@@ -23,6 +23,9 @@ mod test_mq;
 #[cfg(any(target_os = "linux", target_os = "macos"))]
 mod test_poll;
 
+#[cfg(any(target_os = "linux"))]
+mod test_inotify;
+
 mod ports {
     use std::sync::atomic::{AtomicUsize, ATOMIC_USIZE_INIT};
     use std::sync::atomic::Ordering::SeqCst;
