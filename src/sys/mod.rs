@@ -46,6 +46,9 @@ pub mod utsname;
 
 pub mod wait;
 
+#[cfg(any(target_os = "linux"))]
+pub mod inotify;
+
 pub mod mman;
 
 pub mod uio;
